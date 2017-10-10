@@ -28,4 +28,4 @@
     * [Longest Palindromic Substring](algorithm/longestpalindromicsubstring.md)
     * [Shortest Palindrome](algorithm/shortestPalindrome.md)
 * [Android](android/README.md)
-* [计算机基础](base/README.md)](base/README.md)
+* [计算机基础](base/README.md)
