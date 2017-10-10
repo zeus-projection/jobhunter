@@ -28,4 +28,12 @@
     * [Shortest Palindrome](algorithm/shortestPalindrome.md)
 * [Android](android/README.md)
 * [计算机基础](base/README.md)
+    * [Http](base/http.md)
+    * [Java垃圾回收机制](base/javagarbage.md)
+    * [排序的一些小问题](base/sort.md)
+    * [多线程](base/thread.md)
+    * [JVM虚拟机](base/jvm.md)
+    * [session&cookie](base/session&cookie.md)
+    * [抽象](base/abstract.md)
+    * [tricky](base/tricky.md)
 
