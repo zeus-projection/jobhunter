@@ -1,0 +1,782 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>快排-二叉查找树-堆排序 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="binearysearch.html" />
+    
+    
+    <link rel="prev" href="erfen.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="erfen.html">
+            
+                <a href="erfen.html">
+            
+                    
+                    二分查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.2" data-path="quicksort.html">
+            
+                <a href="quicksort.html">
+            
+                    
+                    快排-二叉查找树-堆排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="binearysearch.html">
+            
+                <a href="binearysearch.html">
+            
+                    
+                    二叉树遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="balancebineary.html">
+            
+                <a href="balancebineary.html">
+            
+                    
+                    平衡二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="LRUCache.html">
+            
+                <a href="LRUCache.html">
+            
+                    
+                    LRUCache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="MNisland.html">
+            
+                <a href="MNisland.html">
+            
+                    
+                    M * N孤岛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="2power.html">
+            
+                <a href="2power.html">
+            
+                    
+                    判断一个数字是不是2的幂
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="primeNumber.html">
+            
+                <a href="primeNumber.html">
+            
+                    
+                    质数相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="kListMerage.html">
+            
+                <a href="kListMerage.html">
+            
+                    
+                    K个列表融合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="jospher.html">
+            
+                <a href="jospher.html">
+            
+                    
+                    约瑟夫环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="dynamic.html">
+            
+                <a href="dynamic.html">
+            
+                    
+                    动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="3Sum.html">
+            
+                <a href="3Sum.html">
+            
+                    
+                    3Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="Str2Int.html">
+            
+                <a href="Str2Int.html">
+            
+                    
+                    String to Intger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="divide2Int.html">
+            
+                <a href="divide2Int.html">
+            
+                    
+                    Divide Two Integers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" data-path="frac2dec.html">
+            
+                <a href="frac2dec.html">
+            
+                    
+                    Fraction to Recurring Decimal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="surroundedregion.html">
+            
+                <a href="surroundedregion.html">
+            
+                    
+                    Surrounded Regions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="decodeways.html">
+            
+                <a href="decodeways.html">
+            
+                    
+                    Decode ways
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.18" data-path="largestNumber.html">
+            
+                <a href="largestNumber.html">
+            
+                    
+                    Largest number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.19" data-path="validatebinarysearchtree.html">
+            
+                <a href="validatebinarysearchtree.html">
+            
+                    
+                    Validate Binary Search Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.20" data-path="longestsubstringwithoutrepeatingchar.html">
+            
+                <a href="longestsubstringwithoutrepeatingchar.html">
+            
+                    
+                    Longest Substring Without Repeating Characters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.21" data-path="longestpalindromicsubstring.html">
+            
+                <a href="longestpalindromicsubstring.html">
+            
+                    
+                    Longest Palindromic Substring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22" data-path="shortestPalindrome.html">
+            
+                <a href="shortestPalindrome.html">
+            
+                    
+                    Shortest Palindrome
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../android/">
+            
+                <a href="../android/">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../base/">
+            
+                <a href="../base/">
+            
+                    
+                    计算机基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >快排-二叉查找树-堆排序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5FEB;&#x6392;-&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;-&#x5806;&#x6392;&#x5E8F;">&#x5FEB;&#x6392;-&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;-&#x5806;&#x6392;&#x5E8F;</h1>
+<h4 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h4>
+<p><strong>&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;QuickSort&#xFF09;</strong>&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;<strong>&#x5206;&#x6CBB;&#x6CD5;&#xFF08;Divide and conquer&#xFF09;</strong>&#xFF0C;&#x628A;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x5206;&#x6210;&#x4E24;&#x4E2A;&#x5B50;&#x5E8F;&#x5217;</p>
+<ol>
+<li>&#x4ECE;&#x6570;&#x5217;&#x4E2D;&#x6311;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x79F0;&#x4E3A;<strong>&#x201C;&#x57FA;&#x51C6;&#xFF08;pivot&#xFF09;&#x201C;</strong>&#x3002;</li>
+<li>&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x6570;&#x5217;&#xFF0C;&#x6240;&#x6709;&#x6BD4;&#x57FA;&#x51C6;&#x5C0F;&#x7684;&#x5143;&#x7D20;&#x6446;&#x5728;&#x57FA;&#x51C6;&#x524D;&#x9762;&#xFF0C;&#x6240;&#x6709;&#x6BD4;&#x57FA;&#x51C6;&#x503C;&#x5927;&#x7684;&#x5143;&#x7D20;&#x6446;&#x5728;&#x57FA;&#x51C6;&#x540E;&#x9762;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x8BE5;&#x57FA;&#x51C6;&#x5C31;&#x5904;&#x4E8E;&#x6570;&#x5217;&#x7684;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x4E2A;&#x79F0;&#x4E3A;<strong>&#x5206;&#x533A;(partition)</strong>&#x3002;</li>
+<li>&#x9012;&#x5F52;&#x5730;&#x628A;&#x4E24;&#x4E2A;&#x5B50;&#x5E8F;&#x5217;&#x6392;&#x5E8F;&#x3002;</li>
+</ol>
+<p>&#x4F2A;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-kotlin">function quicksort(q)
+    <span class="hljs-variable"><span class="hljs-keyword">var</span> list less, pivotList, greater
+    if length(q) &lt;</span>= <span class="hljs-number">1</span> {
+      <span class="hljs-keyword">return</span> q
+    } <span class="hljs-keyword">else</span> {
+      select a pivot value pivot from q
+      <span class="hljs-keyword">for</span> each x <span class="hljs-keyword">in</span> q except the pivot element
+          <span class="hljs-keyword">if</span> x <span class="hljs-type">&lt; pivot then add x to less
+          if x &gt;</span>= pivot then add x to greater
+      add pivot to pivotList
+      <span class="hljs-keyword">return</span> concatenate(quicksort(less), pivotList, quicksort(greater))
+    }
+</code></pre>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x539F;&#x5730;&#x5206;&#x533A;&#x7248;&#x672C;&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x5230; O(logn)</p>
+<pre><code class="lang-kotlin">function partition(a, left, right, pivotIndex)
+    pivotValue = a[pivotIndex]
+    swap(a[pivotIndex], a[right])
+    storeIndex = left
+    <span class="hljs-keyword">for</span> i form left to right <span class="hljs-number">-1</span>
+        <span class="hljs-keyword">if</span> a[i] <span class="hljs-type">&lt;= pivotValue
+            swap(a[storeIndex], a[i])
+            storeIndex++
+    swap(a[right], a[storeIndex])
+    return storeIndex
+
+procedure quicksort(a, left, right)
+    if right &gt;</span> left
+        select a pivot value a[pivotIndex]
+        pivotNewIndex = partition(a, left, right, pivotIndex)
+        quicksort(a, left, pivotNewIndex <span class="hljs-number">-1</span>)
+        quicksort(a, pivotNewIndex + <span class="hljs-number">1</span>, right)
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<p>&#x8FED;&#x4EE3;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> _Range {
+  <span class="hljs-keyword">int</span> start, end;
+} Range;
+
+<span class="hljs-function">Range <span class="hljs-title">new_Range</span><span class="hljs-params">(<span class="hljs-keyword">int</span> s, <span class="hljs-keyword">int</span> e)</span> </span>{
+  Range r;
+  r.start = s;
+  r.end = e;
+  <span class="hljs-keyword">return</span> r;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *x, <span class="hljs-keyword">int</span> *y)</span> </span>{
+  <span class="hljs-keyword">int</span> t = *x;
+  *x = *y;
+  *y = t;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> len)</span> </span>{
+  <span class="hljs-keyword">if</span>(len &lt;= <span class="hljs-number">0</span>) 
+    <span class="hljs-keyword">return</span>;
+  Range r[len];
+  <span class="hljs-keyword">int</span> p = <span class="hljs-number">0</span>;
+  r[p++] = new_Range(<span class="hljs-number">0</span>, len - <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">while</span> (p) {
+    Range range = r[--p];
+    <span class="hljs-keyword">if</span>(range.start &gt;= range.end)
+      <span class="hljs-keyword">continue</span>;
+    <span class="hljs-keyword">int</span> mid = arr[range.end];
+    <span class="hljs-keyword">int</span> left = range.start, right = range.end - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (left &lt; right) {
+      <span class="hljs-keyword">while</span>(arr[left] &lt; mid &amp;&amp; left &lt; right)
+        left++;
+      <span class="hljs-keyword">while</span>(arr[right] &gt; mid &amp;&amp; left &lt; right)
+        right++;
+      swap(&amp;arr[left], &amp;arr[right]);
+    }
+    <span class="hljs-keyword">if</span> (arr[left] &gt;= arr[range.end])
+      swap(&amp;arr[left], &amp;arr[range.end]);
+    <span class="hljs-keyword">else</span> 
+      left++;
+    r[p++] = new_Range(range.start, left<span class="hljs-number">-1</span>);
+    r[p++] = new_Range(left + <span class="hljs-number">1</span>, range.end);
+  }
+}
+</code></pre>
+<p>&#x9012;&#x5F52;&#x6CD5;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *x, <span class="hljs-keyword">int</span> *y)</span> </span>{
+  <span class="hljs-keyword">int</span> t = *x;
+  *x = *y;
+  *y = t;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quick_sort_recursive</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end)</span> </span>{
+  <span class="hljs-keyword">if</span> (start &gt;= end)
+    <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">int</span> mid = arr[end];
+  <span class="hljs-keyword">int</span> left = start, right = end - <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">while</span> (left &lt; right) {
+    <span class="hljs-keyword">while</span> (arr[left] &lt; mid &amp;&amp; left &lt; right)
+      left++;
+    <span class="hljs-keyword">while</span> (arr[right] &gt;= mid &amp;&amp; left &lt; right)
+      right--;
+    swap(&amp;arr[left], &amp;arr[right]);
+  }
+  <span class="hljs-keyword">if</span>(arr[left] &gt;= arr[end]);
+  <span class="hljs-keyword">else</span> 
+    left++;
+  <span class="hljs-keyword">if</span>(left) {
+    quick_sort_recursive(arr, start, left <span class="hljs-number">-1</span>);
+  }
+  quick_sort_recursive(arr, left + <span class="hljs-number">1</span>, end);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> len)</span> </span>{
+  quick_sort_recursive(arr, <span class="hljs-number">0</span>, len <span class="hljs-number">-1</span>);
+}
+</code></pre>
+<p>&#x56FE;&#x793A;</p>
+<p><img src="../assert/&#x5FEB;&#x6392;&#x56FE;&#x793A;.jpg" alt="&#x5FEB;&#x6392;&#x56FE;&#x793A;"></p>
+<p>&#x5FEB;&#x6392;&#x6709;&#x4E24;&#x4E2A;&#x7ADE;&#x4E89;&#x5BF9;&#x624B;&#xFF0C;&#x5206;&#x522B;&#x662F;<strong>&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;</strong>&#x548C;<strong>&#x5806;&#x6392;&#x5E8F;</strong></p>
+<h4 id="&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;">&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;</h4>
+<p><strong>&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#xFF08;Binary Search Tree&#xFF09;</strong>&#x662F;&#x6307;&#xFF0C;&#x4E00;&#x9897;&#x7A7A;&#x6811;&#x6216;&#x8005;&#x5177;&#x6709;&#x4E0B;&#x5217;&#x6027;&#x8D28;&#x7684;&#x4E8C;&#x53C9;&#x6811;</p>
+<ol>
+<li>&#x82E5;&#x4EFB;&#x610F;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x4E0D;&#x7A7A;&#xFF0C;&#x5219;&#x5DE6;&#x5B50;&#x6811;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x503C;&#x5747;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x6839;&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF1B;</li>
+<li>&#x82E5;&#x4EFB;&#x610F;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x5B50;&#x6811;&#x4E0D;&#x7A7A;&#xFF0C;&#x5219;&#x53F3;&#x5B50;&#x6811;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x503C;&#x5747;&#x5927;&#x4E8E;&#x5B83;&#x7684;&#x6839;&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF1B;</li>
+<li>&#x4EFB;&#x610F;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x4E5F;&#x5206;&#x522B;&#x662F;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#xFF1B;</li>
+<li>&#x6CA1;&#x6709;&#x952E;&#x503C;&#x76F8;&#x7B49;&#x7684;&#x8282;&#x70B9;&#x3002;</li>
+</ol>
+<p>&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;b&#x4E2D;&#x5BFB;&#x627E;x&#x7684;&#x8FC7;&#x7A0B;&#x4E3A;&#xFF1A;</p>
+<ol>
+<li>&#x82E5;b&#x662F;&#x7A7A;&#x6811;&#xFF0C;&#x5219;&#x641C;&#x7D22;&#x5931;&#x8D25;&#xFF0C;&#x5426;&#x5219;&#xFF1B;</li>
+<li>&#x82E5;x&#x7B49;&#x4E8E;b&#x7684;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x5219;&#x67E5;&#x627E;&#x6210;&#x529F;&#xFF1B;&#x5426;&#x5219;&#xFF1B;</li>
+<li>&#x82E5;x&#x5C0F;&#x4E8E;b&#x7684;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x5219;&#x641C;&#x7D22;&#x5DE6;&#x5B50;&#x6811;&#xFF1B;&#x5426;&#x5219;&#xFF1B;</li>
+<li>&#x67E5;&#x627E;&#x53F3;&#x5B50;&#x6811;&#xFF1B;</li>
+</ol>
+<pre><code class="lang-c++"><span class="hljs-function">Status <span class="hljs-title">SearchBST</span><span class="hljs-params">(BiTree T, Key key, BiTree f, BiTree &amp;p)</span> </span>{
+  <span class="hljs-keyword">if</span> (!T) {
+    p = f;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key == T-&gt;data.key) {
+    p = T;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key &lt; T-&gt;data.key)
+    <span class="hljs-keyword">return</span> SearchBST(T-&gt;lchild, key, T, p);
+  <span class="hljs-keyword">else</span> 
+    <span class="hljs-keyword">return</span> SearchBST(T-&gt;rchild, key, T, p);
+}
+</code></pre>
+<h4 id="&#x5806;&#x6392;&#x5E8F;">&#x5806;&#x6392;&#x5E8F;</h4>
+<p><strong>&#x5806;&#x6392;&#x5E8F;&#xFF08;Heapsort&#xFF09;</strong> &#x662F;&#x6307;&#x5229;&#x7528;&#x5806;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6240;&#x8BBE;&#x8BA1;&#x7684;&#x4E00;&#x79CD;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;&#x5806;&#x662F;&#x4E00;&#x79CD;&#x8FD1;&#x4F3C;&#x4E8E;&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5E76;&#x4E14;&#x6EE1;&#x8DB3;&#xFF1A;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x952E;&#x503C;&#x6216;&#x7D22;&#x5F15;&#x603B;&#x662F;&#x5C0F;&#x4E8E;&#xFF08;&#x6216;&#x8005;&#x5927;&#x4E8E;&#xFF09;&#x5B83;&#x7684;&#x7236;&#x8282;&#x70B9;</p>
+<p><strong>&#x5806;&#x8282;&#x70B9;&#x7684;&#x8BBF;&#x95EE;&#xFF1A;</strong></p>
+<p>&#x901A;&#x5E38;&#x5806;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<ul>
+<li>&#x200B;  &#x7236;&#x8282;&#x70B9;i&#x7684;&#x5DE6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x5728;&#xFF08;2*i + 1)</li>
+<li>&#x200B;  &#x7236;&#x8282;&#x70B9;i&#x7684;&#x53F3;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x5728;(2*i+2)</li>
+<li>&#x200B;  &#x5B50;&#x7ED3;&#x70B9;i&#x7684;&#x7236;&#x8282;&#x70B9;&#x5728;&#x4F4D;&#x7F6E;floor((i-1)&#xFF0F;2)</li>
+</ul>
+<p>&#x6700;&#x5927;&#x5806;&#x8C03;&#x6574;&#xFF08;Max_Heapify&#xFF09;: &#x5C06;&#x5806;&#x7684;&#x672B;&#x7AEF;&#x5B50;&#x7ED3;&#x70B9;&#x505A;&#x8C03;&#x6574;&#xFF0C;&#x4F7F;&#x5F97;&#x5B50;&#x7ED3;&#x70B9;&#x6C38;&#x8FDC;&#x5C0F;&#x4E8E;&#x7236;&#x8282;&#x70B9;&#xFF1B;</p>
+<p>&#x521B;&#x5EFA;&#x6700;&#x5927;&#x5806;&#xFF08;Build_Max_Heap&#xFF09;&#xFF1A;&#x5C06;&#x5806;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#xFF1B;</p>
+<p>&#x5806;&#x6392;&#x5E8F;&#xFF08;HeapSprt&#xFF09;&#xFF1A;&#x79FB;&#x9664;&#x4F4D;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x505A;&#x6700;&#x5927;&#x5806;&#x8C03;&#x6574;&#x7684;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#xFF1B;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HeapSort</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] arr;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HeapSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>{
+    <span class="hljs-keyword">this</span>.arr = arr;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> len = arr.length - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> beginIndex = (len - <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = beginIndex; i &gt;= <span class="hljs-number">0</span>; i--) {
+      maxHeapify(i, len);
+    }
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = len; i &gt; <span class="hljs-number">0</span>; i--) {
+      swap(<span class="hljs-number">0</span>, i);
+      maxHeapify(<span class="hljs-number">0</span>, i -<span class="hljs-number">1</span>);
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>{
+    <span class="hljs-keyword">int</span> temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">maxHeapfiy</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, <span class="hljs-keyword">int</span> len)</span> </span>{
+    <span class="hljs-keyword">int</span> li = (index &lt;&lt; <span class="hljs-number">1</span>) + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> ri = li + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> cMax = li;
+
+    <span class="hljs-keyword">if</span>(li &gt; len) <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-keyword">if</span>(ri &lt;= len &amp;&amp; arr[ri] &gt; arr[li])
+      cMax = ri;
+    <span class="hljs-keyword">if</span>(arr[cMax] &gt; arr[index]) {
+      swap(cMax, index);
+      maxHeapify(cMax , len);
+    }
+  }
+}
+</code></pre>
+<p>&#x56FE;&#x793A; &#x2014; &#x5EFA;&#x5806;</p>
+<p><img src="../assert/building-a-heap.png" alt="building-a-heap"></p>
+<p>&#x56FE;&#x793A; &#x5806;&#x6392;&#x5E8F;</p>
+<p><img src="../assert/HeapSort.png" alt="HeapSort"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="erfen.html" class="navigation navigation-prev " aria-label="Previous page: 二分查找">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="binearysearch.html" class="navigation navigation-next " aria-label="Next page: 二叉树遍历">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"快排-二叉查找树-堆排序","level":"2.1.2","depth":2,"next":{"title":"二叉树遍历","level":"2.1.3","depth":2,"path":"algorithm/binearysearch.md","ref":"algorithm/binearysearch.md","articles":[]},"previous":{"title":"二分查找","level":"2.1.1","depth":2,"path":"algorithm/erfen.md","ref":"algorithm/erfen.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"algorithm/quicksort.md","mtime":"2017-10-09T11:15:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-09T11:39:16.097Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
