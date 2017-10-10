@@ -1,0 +1,172 @@
+# Activity
+
+#### Activity的启动过程
+
+
+
+大部分行为都出现在 ActivityStack.java类中
+
+我们可以通过配置两个应用程序具有相同的uid + process的，或者在AndroidManifest.xml配置文件的application标签或者activity标签中显式制定相同的process属性，这样，**不同的应用程序也可以在同一个进程中启动**。
+
+- Activity管理的核心是ActivityManagerService，是一个独立的进程；
+- ActivityThread是每一个应用程序所在进程的主线程，循环的消息处理；
+- ActivityThread与ActivityManagerService的通信属于进程间通信，使用binder机制；
+- **一个应用程序中所有的Activity只有一个ActivityThread属于一个Process；**
+
+![Activity启动1](../assert/Activity启动1.png)
+
+![Activity启动2](../assert/Activity启动2.png)
+
+几个关键的类：
+
+**ActivityManagerService，Activity，ActivityStack，ActivityThread**；
+
+流程：
+
+- 使用代理模式启动到ActivityManagerService中执行；
+- 创建ActivityRecord到mHistory中；
+- 通过socket通信到Zygote相关类创建process；
+- 通过ApplicationThread与ActivityManagerService建立通信；
+- ActivityManagerService通知ActivityThread启动Activity创建；
+- ActivityThread创建Activity加入到mActivities中并开始调度Acitivity执行；
+
+
+
+
+#### AndroidManifest 不注册Activity的话怎么启动，已经我设置的是从A Activity 启动B Activity的代码，怎么让他把C启动起来
+
+先说一下Activity启动的一些关键点
+
+- ActivityManagerNative继承了IBinder，实现了IActivityManager，是AMS的父类；
+- ActivityManagerService就是AMS，系统中的重要服务，管理Activity生命周期；
+- ActivityManagerProxy同样继承了IBinder，实现了IActivityManager，是AcitivityManagerNativie的内部类，是AMS在应用中的代理；
+- ActivityStack AMS调用它对Activity进行管理，新版本已经抽取到了ActivityStackSupervisor；
+- ActivityThread 每个应用的入口，它的main是应用的起点，里面维护了应用主线程；
+- Instrumentation，协助ActivityThread完成一些琐碎的工作，比如启动Activity，最终由它去调用AMS；
+- ApplicationThread，其实是一个Binder，ActivityThread使用它来跟AMS通信，服务端在ActivityThread，AMS获取的是它的代理。
+
+在Instrumentation的函数 checkStartActivityResult中抛出ActivityNotFound异常；
+
+我们先创建两个Activity，StubActivity在manifest注册，然后，TargetActivity，不注册。
+
+```java
+Class<?> activityManagerNativeClass = Class.forName("android.app.ActivityManagerNative");
+Field gDefaultField = activityManagerNativeClass.getDeclaredField("gDefault");
+gDefaultField.setAccessible(true);
+
+Object gDefault = gDefaultField.get(null);
+Class<?> singleton = Class.forName("android.util.Singleton");
+Field mInstanceField = singleton.getDeclaredField("mInstance");
+mInstanceField.setAccessible(true);
+
+Object rawIActivityManager = mInstanceField.get(gDefault);
+
+Class<?> iActivityManagerInterface = Class.forName("android.app.IActivityManager");
+Object proxy = Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
+                                     new Class<?>[] {iActivityManagerInterface}, new IActivityManagerHandler(rawIActivityManager));
+mInstanceField.set(gDefault, proxy);
+
+public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+  if("startActivity".equals(method.getName())) {
+    Intent raw;
+    int index = 0;
+    
+    for (int i = 0; i < args.length; i++) {
+      if(args[i] instanceof Intent) {
+        index = i;
+        break;
+      }
+    }
+    raw = (Intent) args[index];
+    Intent newIntent = new Intent();
+    Stirng stubPackage = "com.stub.app";
+    
+    ComponentName componentName = new ComponentName(stubPackage,StubActivity.class.getName());
+    newIntent.setComponent(componentName);
+    
+    newIntent.putExtra(AMSHookerHelper.EXTRA_TARGET_INTENT, raw);
+    args[index] = newIntent;
+    
+    return method.invoke(mBase, args);
+  }
+  
+  return method.invoke(mBase, args);
+}
+
+Class<?> activityThreadClass = Class.forName("android.app.ActivityThread");
+Field currentActivityThreadField = activityThreadClass.getDeclaredField("sCurrentActivityThread");
+currentActivityThreadField.setAccessable(true);
+Object currentActivityThread = currentActivityThreadField.get(null);
+
+Field mHField = activityThreadClass.getDeclaredField("mH");
+mHField.setAccessible(true);
+Handler mH = (Handler) mHField.get(currentActivityThread);
+Field mCallBackField = Handler.class.getDeclaredField("mCallback");
+mCallBackField.setAccessible(true);
+mCallBackField.set(mH, new ActivityThreadHandlerCallback(mH));
+```
+```java
+   class ActivityThreadHandlerCallback implements Handler.Callback {
+
+ Handler mBase;
+ public ActivityThreadHandlerCallback(Handler base) {
+   mBase = base;
+ }
+ 
+ @Override
+ public boolean handleMessage(Message msg) {
+   switch (msg.what) {
+     case 100:// LAUNCH_ACTIVITY
+       handleLaunchActivity(msg);
+       break;
+   }
+   mBase.handeMessage(msg);
+   return true;
+ }
+ 
+ private void handleLaunchActivity(Message msg) {
+   Object obj = msg.obj;
+   try {
+     Field intent = obj.getClass().getDeclaredField("intent");
+     intent.setAccessible(true);
+     Intent raw = (Intent) intent.get(obj);
+     Intent target = raw.getParcelableExtra(AMSHookHelper.EXTRA_TARGET_INTENT);
+     raw.setComponent(target.getComponent());
+   } catch(Exception e) {
+     
+   }
+ }
+```
+
+
+####AMS和PMS
+
+  两个最重要的组件 **ActivityManagerService** 和 **PackageManagerService**
+
+  ActivityManagerService:
+
+- startActivity最终调用了AMS的startActivity系列放啊， 实现了Activity的启动：Activity的生命周期回调，也是在AMS中完成；
+  - startService, bindService最终调用了AMS的startService和bindService方法；
+  - 动态广播的注册和接收在AMS中完成（静态广播在PMS中完成）；
+  - getContentResolver最终从AMS的getContentProvider获取ContentProvider；
+
+
+  PMS 权限校验，Apk meta信息获取，四大组件信息获取等重要功能。
+
+  AMS和PMS就是以Binder的方式提供给应用程序使用的系统服务。
+
+
+
+#### startActivity
+
+  startActivity的两种使用形式：
+
+1. 直接调用**Context类的startActivity**方法；这种方法启动的Activity没有Activity栈，不能以standard方式启动，**必须加上FLAG_ACTIVITY_NEW_TASK**。
+2. 调用被**Activity重载过的startActivity**方法，我们在Activity中直接调用的方法就是这个。
+
+
+
+
+
+# //TODO 生命周期相关的问题
+
