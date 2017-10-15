@@ -38,7 +38,7 @@
     * [Binder](android/binder.md)
     * [View的绘制](android/view.md)
     * [触摸事件](android/touch.md)
-    * [RecyclerView](android/recyclerView)
+    * [RecyclerView](android/recyclerView.md)
 * [计算机基础](base/README.md)
     * [Http](base/http.md)
     * [Java垃圾回收机制](base/javagarbage.md)
