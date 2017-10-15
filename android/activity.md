@@ -170,3 +170,30 @@ mCallBackField.set(mH, new ActivityThreadHandlerCallback(mH));
 
 # //TODO 生命周期相关的问题
 
+### Activity 隐藏标题栏和状态栏
+
+```java
+//这段代码必须放在setContentview之前执行，否则会抛出异常
+//并且继承AppCompatActivity的App并不能通过这个方式隐藏掉
+this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+```
+
+```java
+//这段代码隐藏了状态栏
+View decorView = getWindow().getDecorView();
+int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        | View.SYSTEM_UI_FLAG_FULLSCREEN;
+decorView.setSystemUiVisibility(uiOptions);
+```
+
+**android:theme="@android:style/Theme.NoTitleBar.Fullscreen"这行代码如果在Application中配置的话，整个APP的Activity都只能是继承自Activity，不能是AppCompatActivity，因为AppCompatActivity下的Theme只能是ActionBar样式的；**
+
+```xml
+<!--继承了AppCompatActivity的使用这种方法隐藏标题栏-->
+<application    
+   android:icon="@mipmap/ic_launcher"    
+   android:label="@string/app_name"    
+   android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+>
+```
+
