@@ -39,6 +39,7 @@
     * [View的绘制](android/view.md)
     * [触摸事件](android/touch.md)
     * [RecyclerView](android/recyclerView.md)
+    * [ViewTricky](android/viewTricky.md)
     * [常见编译问题的解决方案](android/other.md)
 * [计算机基础](base/README.md)
     * [Http](base/http.md)
